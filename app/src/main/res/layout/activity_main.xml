@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_margin="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <EditText
+            android:id="@+id/ed_email"
+            android:layout_margin="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Email"
+            android:text="@={model.email}"
+            android:inputType="textEmailAddress"/>
+
+        <EditText
+            android:id="@+id/ed_password"
+            android:layout_margin="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Password"
+            android:text="@={model.password}"
+            android:inputType="textPassword"/>
+
+        <EditText
+            android:id="@+id/ed_confirmpassword"
+            android:layout_margin="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Confirm Password"
+            android:text="@={model.confirmPassword}"
+            android:inputType="textPassword"/>
+
+
+        <TextView
+            android:id="@+id/tv_result"
+            android:layout_margin="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Confirm Password"
+            android:text="@{model.confirmPassword}"
+            android:inputType="text"/>
+
+
+        <Button
+            android:onClick="@{()->activity.onOrderButtonClick()}"
+
+        android:layout_margin="5dp"
+        android:id="@+id/register_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="REGISTER BUTTON"/>
+
+        <!--android:onClick="@{(view) -> activity.onOrderButtonClick}"-->
+
+
+
+    </LinearLayout>
+
+
+    <data>
+        <variable
+            name="model"
+            type="binding.livedatabinding.Model.LoginModel" />
+
+        <variable
+            name="activity"
+            type="binding.livedatabinding.MainActivity" />
+
+    </data>
+
+
+</layout>
